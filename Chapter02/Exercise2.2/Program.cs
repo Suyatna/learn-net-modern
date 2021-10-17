@@ -21,7 +21,7 @@ namespace Exercise2._2
             WriteLine($"float   {sizeof(float),-4} {float.MinValue,30} {float.MaxValue,30}");
             WriteLine($"double  {sizeof(double),-4} {double.MinValue,30} {double.MaxValue,30}");
             WriteLine($"decimal {sizeof(decimal),-4} {decimal.MinValue,30} {decimal.MaxValue,30}");
-            WriteLine("--------------------------------------------------------------------------");
+            WriteLine("---------------------------------------------------------------------------");
         }
     }
 }
