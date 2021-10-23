@@ -43,6 +43,9 @@ namespace WriteFunction
         {
             decimal rate = 0.0M;
 
+            // since we are matching string values a switch
+            // statement is easier than a switch expression
+
             switch (twoLetterRegionCode)
             {
                 case "CH": // switzerland
@@ -100,10 +103,44 @@ namespace WriteFunction
             }
         }
 
+        static string CardinalToOrdinal(int number)
+        {
+            switch (number)
+            {
+                case 11: // special cases for 11th to 13th
+                case 12:
+                case 13:
+                    return $"{number}th";
+                default:
+                    int lastDigit = number % 10;
+
+                    string suffix = lastDigit switch
+                    {
+                        1 => "st",
+                        2 => "nd",
+                        3 => "rd",
+                        _ => "th"
+                    };
+
+                    return $"{number}{suffix}";
+            }
+        }
+
+        static void RunCardinalToORdinal()
+        {
+            for (int number = 1; number <= 40; number++)
+            {
+                Write($"{CardinalToOrdinal(number)} ");
+            }
+
+            WriteLine();
+        }
+
         static void Main(string[] args)
         {
             // RunTimesTable();
-            RunCalculatorTax();
+            // RunCalculatorTax();
+            RunCardinalToORdinal();
         }
     }
 }
