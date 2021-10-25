@@ -7,7 +7,5 @@ namespace Packt.Shared
         // fields
         public string Name;
         public DateTime DateOfBirth;
-
-
     }
 }

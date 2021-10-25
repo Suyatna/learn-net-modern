@@ -17,6 +17,18 @@ namespace PeopleApp
                 arg0: bob.Name,
                 arg1: bob.DateOfBirth
             );
+
+            var alice = new Person
+            {
+                Name = "Alice Jones",
+                DateOfBirth = new DateTime(1998, 3, 7)
+            };
+
+            WriteLine(
+                format: "{0} was born on {1:dd MM yy}",
+                arg0: alice.Name,
+                arg1: alice.DateOfBirth
+            );
         }
     }
 }
